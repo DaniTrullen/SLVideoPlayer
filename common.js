@@ -1,3 +1,5 @@
+//Enumerats i funcions de console log
+
 //Player request.
 const kPlayVideoReq         = 0;
 const kPauseVideoReq        = 1;

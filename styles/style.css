@@ -1,5 +1,5 @@
 .sideBar {
-    width: 852px;
+    width: 612px;
     height: 28px;
     outline: 2px solid rgba(0, 0, 0, 0.9);
     background-color: rgba(243, 244, 246, 0.9);
@@ -22,8 +22,8 @@
 }
 
 #videoPlayer {
-    width: 852px;
-    height: 536px;
+    width: 612px;
+    height: 582px;
     background-color: white;
     border: 2px solid rgba(0, 0, 0, 0.9);
     position: absolute;
@@ -35,7 +35,7 @@
 
 #timeTrack {
     margin: auto;
-    width: 540px;
+    width: 300px;
     height: 28px;
     line-height: 28px;
 }
@@ -124,13 +124,13 @@
 }
 
 .canvasDiv {
-    width: 852px;
-    height: 480px
+    width: 612px;
+    height: 526px
 }
 
 #playCanvas {
-    width: 852px;
-    height: 480px;
+    width: 612px;
+    height: 526px;
 }
 
 .no-padding {
@@ -176,9 +176,32 @@
     letter-spacing: 1px;
 }
 
-#input {
-    float: right;
+#titol {
+    height: 40px;
+    line-height: 40px;
+    /*position:fixed;*/
+    top:40;
+    width: 100%;
+    text-align: center;
+    background: #F3F4F6;
+    color: #000;
+    font-family: Arial;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+
+#inputDiv {
+    float: left;
+    margin-left: 10px;
     margin-right: 10px;
     margin-top: 3px;
     font-size: 14px;
+    background: #F3F4F6;
+    color: #000;
+    font-family: Arial;
+    font-size: 14px;
+}
+#inputUrl {
+    width:auto;
 }
