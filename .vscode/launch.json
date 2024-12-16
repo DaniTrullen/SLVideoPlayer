@@ -5,10 +5,17 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch chrome against localhost",
+            "url": "http://localhost:5500/index.html",  //?vid=http://localhost:5500/video/h265_high.mp4"
+            "webRoot": "${workspaceFolder}"
+        },
+        {
             "type": "msedge",
             "request": "launch",
             "name": "Launch msEdge against localhost",
-            "url": "http://localhost:5500/index.html?vid=http://localhost:5500/video/h265_high.mp4",
+            "url": "http://localhost:5500/index.html",  //?vid=http://localhost:5500/video/h265_high.mp4"
             "webRoot": "${workspaceFolder}"
         }
     ]

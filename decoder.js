@@ -196,7 +196,7 @@ Decoder.prototype.onWasmLoaded = function () {
 
     this.videoCallback = Module.addFunction(function (buff, size, timestamp) {
         var outArray = Module.HEAPU8.subarray(buff, buff + size);
-        var data = new Uint8Array(outArray);
+        var data = new Uint8Array(outArray);  //TODO:potser això no caldria. sembla que el decoder ens retorna un Uint8Array
         var objData = {
             t: kVideoFrame,
             s: timestamp,

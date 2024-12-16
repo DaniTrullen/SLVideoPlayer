@@ -29,6 +29,7 @@ function Player() {
     this.fileInfo           = null;
     this.pcmPlayer          = null;
     this.canvas             = null;
+    this.render2D        = null;
     this.webglPlayer        = null;
     this.callback           = null;
     this.waitHeaderLength   = 524288;
@@ -197,9 +198,10 @@ Player.prototype.play = function (url, canvas, callback, waitHeaderLength, isStr
         this.displayLoop();
 
         //var playCanvasContext = playCanvas.getContext("2d"); //If get 2d, webgl will be disabled.
-        this.webglPlayer = new WebGLPlayer(this.canvas, {
-            preserveDrawingBuffer: false
-        });
+        // this.webglPlayer = new WebGLPlayer(this.canvas, {
+        //     preserveDrawingBuffer: false
+        // });
+        this.render2D = new Canvas2DRenderer(this.canvas);
 
         if (!this.isStream) {
             var req = {
@@ -388,6 +390,7 @@ Player.prototype.stop = function () {
 
     this.fileInfo           = null;
     this.canvas             = null;
+    this.render2D=null;
     this.webglPlayer        = null;
     this.callback           = null;
     this.duration           = 0;
@@ -471,9 +474,9 @@ Player.prototype.seekTo = function(ms) {
 };
 
 Player.prototype.fullscreen = function () {
-    if (this.webglPlayer) {
-        this.webglPlayer.fullscreen();
-    }
+    // if (this.webglPlayer) {
+    //     this.webglPlayer.fullscreen();
+    // }
 };
 
 Player.prototype.getState = function () {
@@ -920,7 +923,8 @@ Player.prototype.stopBuffering = function () {
 }
 
 Player.prototype.renderVideoFrame = function (data) {
-    this.webglPlayer.renderFrame(data, this.videoWidth, this.videoHeight, this.yLength, this.uvLength);
+    //this.webglPlayer.renderFrame(data, this.videoWidth, this.videoHeight, this.yLength, this.uvLength);
+    this.render2D.renderFrame(data, this.videoWidth, this.videoHeight, this.yLength, this.uvLength);
 };
 
 Player.prototype.downloadOneChunk = function () {
