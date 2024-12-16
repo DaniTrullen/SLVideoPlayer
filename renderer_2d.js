@@ -62,8 +62,10 @@ class Canvas2DRenderer {
       //ajustem la mida del canvas a la mida de la imatge
       if(this._canvas.width !== width) this._canvas.width = width;
       if(this._canvas.height !== height) this._canvas.height = height;
+      
+      if(this._imageData==null)
+        this.initImageData(width,height);  //només fer-ho un cop!!
 
-      this.initImageData(width,height);  //només fer-ho un cop!!
       this.yuv2rgba(yuvdata, width, height, this._imageData.data)
 
       //console.log(`display frame width=${width}, height=${height}`)
